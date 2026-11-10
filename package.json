@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack server --open",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint src/**/*.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,11 +22,13 @@
   },
   "homepage": "https://github.com/DavidKuria-M/Weather-App#readme",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^9.39.5",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^7.1.5",
     "dotenv-webpack": "^9.0.0",
-    "eslint": "^10.14.0",
+    "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
+    "gh-pages": "^6.3.0",
     "globals": "^17.14.0",
     "html-webpack-plugin": "^5.6.8",
     "image-loader": "^0.0.1",
