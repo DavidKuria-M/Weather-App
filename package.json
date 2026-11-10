@@ -1,0 +1,36 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidKuria-M/Weather-App.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/DavidKuria-M/Weather-App/issues"
+  },
+  "homepage": "https://github.com/DavidKuria-M/Weather-App#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "css-loader": "^7.1.5",
+    "dotenv-webpack": "^9.0.0",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "html-webpack-plugin": "^5.6.8",
+    "image-loader": "^0.0.1",
+    "prettier": "^3.9.10",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.112.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0"
+  }
+}
