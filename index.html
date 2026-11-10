@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script defer src="main.js"></script></head>
+<body>
+    <div class="bg-gradient-blur bg-blur-peach"></div>
+    <div class="bg-gradient-blur bg-blur-sky"></div>
+    <div class="bg-illustration cloud-1"><i class="fa-solid fa-cloud"></i></div>
+    <div class="bg-illustration sun-1"><i class="fa-solid fa-sun"></i></div>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                    <i class="fa-solid fa-cloud icon-cloud"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>Weather<span>Now</span></h1>
+                    <p>Check the weather. Anywhere. Anytime.</p>
+                </div>
+            </div>
+            <div class="api-attribution">
+                <span>Powered by Visual Crossing Weather API</span>
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <form id="search-form" class="search-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Enter a city or location (eg.Nairobi,London...)" autocomplete="off" required>
+                </div>
+                <button type="submit" class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                </button>
+            </form>
+        </section>
+
+        <main class="weather-dashboard">
+            <section class="current-weather-card">
+
+                <div class="unit-toggle">
+                    <button id="btn-celsius" class="toggle-btn active" data-unit="metric">&deg;C</button>
+                    <button id="btn-fahrenheit" class="toggle-btn" data-unit="us">&deg;F</button>
+                </div>
+
+                <div class="current-weather-body">
+                    <div class="current-main-info">
+                        <div class="weather-icon-wrapper" id="current-weather-icon">
+                            <i class="fa-solid fa-cloud-sun main-icon"></i>
+                            <!--Dynamic populated icon-->
+                        </div>
+                        <div class="temperature-details">
+                            <h2 class="location-name" id="location-display">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span id="city-country">Nairobi, Kenya</span>
+                            </h2>
+                        <div class="temp-display">
+                            <span id="current-temp">22 &deg;C</span>
+                        </div>
+                            <h3 class="weather-condition" id="current-condition">Partly Cloudy</h3>
+                            <p class="feels-like">Feels like: <span id="feels-like-temp">22&deg;C</span></p>
+                        </div>         
+                    
+                        <div class="card-divider"></div>
+
+                        <div class="weather-metrics">
+                            <div class="metric-item">
+                                <i class="fa-solid fa-droplet"></i>
+                                <span class="label">Humidity:</span>
+                                <span class="value" id="humidity-val"></span>
+                            </div>
+
+                            <div class="metric-item">
+                                <i class="fa-solid fa-wind"></i>
+                                <span class="label">Wind:</span>
+                                <span class="value" id="wind-val"></span>
+                            </div>
+                            <div class="metric-item">
+                                <i class="fa-solid fa-gauge"></i>
+                                <span class="label">Pressure:</span>
+                                <span class="value" id="pressure-val"></span>
+                            </div>
+                            <div class="metric-item">
+                                <i class="fa-regular fa-sun"></i>
+                                <span class="label">Sunrise:</span>
+                                <span class="value" id="sunrise-val"></span>
+                            </div>
+                            <div class="metric-item">
+                                <i class="fa-solid fa-cloud-sun"></i>
+                                <span class="label">Sunset:</span>
+                                <span class="value" id="sunset-val"></span>
+                            </div>
+
+                        </div>
+          
+                    </div>
+                </div>
+                
+            </section>
+
+            <section class="forecast-section">
+                <div class="forecast-header">
+                    <div class="title-group">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <h3>5-Day Forecast</h3>
+                    </div>
+                    <span class="badge-next-days">Nest 5 Days &rarr;</span>
+                </div>
+
+                <div class="forecast-cards-container" id="forecast-container"></div>
+            </section>
+
+            <section class="status-banner-section">
+                <div class="status-banner" id="status-banner">
+                    <div class="status-left">
+                        <div class="spinner" id="status-spinner"></div>
+                        <div class="status-message">
+                            <p id="status-title">Fetching weather data...</p>
+                            <span id="status-subtext">This may take a few seconds</span>
+                        </div>
+                    </div>
+                    <div class="status-right">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>Enjoy the weather!</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
